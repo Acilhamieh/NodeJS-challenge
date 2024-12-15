@@ -33,13 +33,17 @@ function startApp(name){
  * @param  {string} text data typed by the user
  * @returns {void}
  */
+
 function onDataReceived(text) {
   const trimmedText = text.trim(); // Removes extra spaces and newline
+  const splittext = text.split(" ");
   if (trimmedText === 'quit' || trimmedText === 'exit')  {
     quit();
   }
-  else if(trimmedText === 'hello'){ 
-    hello();
+  else if(splittext[0] === 'hello'){ 
+  /*hello();*/
+  const result= trimmedText+ ' !';
+  console.log(result);
   }
   else if(trimmedText === 'help'){
     help();
@@ -48,6 +52,7 @@ function onDataReceived(text) {
     unknownCommand(text);
   }
 }
+
 
 
 /**
@@ -68,7 +73,7 @@ function unknownCommand(c){
  * @returns {void}
  */
 function hello(){
-  console.log('hello!')
+  console.log('hello !');
 }
 
 
