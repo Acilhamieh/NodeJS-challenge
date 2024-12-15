@@ -62,6 +62,17 @@ function onDataReceived(text) {
    console.log('ok');
    listtasks();
   }
+  else if(trimmedText === 'remove'){
+    tasks.splice(0,1);
+    console.log("ok");
+    listtasks();
+  }
+  else if(splittext[0] === 'remove'){
+    tasks.splice(parseInt(splittext[1])-1,1);
+    console.log("ok");
+    listtasks();
+
+  }
   else{
     unknownCommand(text);
   }
