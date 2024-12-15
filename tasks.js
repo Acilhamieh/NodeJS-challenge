@@ -41,6 +41,9 @@ function onDataReceived(text) {
   else if(trimmedText === 'hello'){ 
     hello();
   }
+  else if(trimmedText === 'help'){
+    help();
+  }
   else{
     unknownCommand(text);
   }
@@ -77,6 +80,21 @@ function hello(){
 function quit(){
   console.log('Quitting now, goodbye!')
   process.exit();
+}
+  
+
+
+/**
+ * Displays all the available commandes 
+ *
+ * @returns {void}
+ */
+function help(){
+console.log("available commandes:");
+console.log("-hello to says hello!");
+console.log("-quit or exit to quit the application ");
+console.log("-help to display this message");
+
 }
 
 // The following line starts the application
