@@ -40,7 +40,7 @@ function onDataReceived(text) {
   if (trimmedText === 'quit' || trimmedText === 'exit')  {
     quit();
   }
-  else if(splittext[0] === 'hello'){ 
+  else if(splittext[0] === 'hello' ||   trimmedText === 'hello'){ 
   /*hello();*/
   const result= trimmedText+ ' !';
   console.log(result);
