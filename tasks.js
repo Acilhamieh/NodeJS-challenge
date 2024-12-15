@@ -96,7 +96,8 @@ function quit(){
  */
 function help(){
 console.log("available commandes:");
-console.log("-hello to says hello!");
+console.log("-hello to display hello!");
+console.log("-hello + anything ;display hello anything ! ");
 console.log("-quit or exit to quit the application ");
 console.log("-help to display this message");
 
