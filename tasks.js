@@ -137,6 +137,9 @@ console.log("available commandes:");
 console.log("-hello to display hello!");
 console.log("-hello + anything ;display hello anything ! ");
 console.log("-list to display tasks");
+console.log("-add + a task to add");
+console.log("-remove to remove the first task ");
+console.log("-remove+ index for the task to remove ");
 console.log("-quit or exit to quit the application ");
 console.log("-help to display this message");
 
