@@ -34,10 +34,11 @@ function startApp(name){
  * @returns {void}
  */
 function onDataReceived(text) {
-  if (text === 'quit\n') {
+  const trimmedText = text.trim(); // Removes extra spaces and newline
+  if (trimmedText === 'quit') {
     quit();
   }
-  else if(text === 'hello\n'){
+  else if(trimmedText === 'hello'){ 
     hello();
   }
   else{
