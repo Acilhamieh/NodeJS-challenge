@@ -16,6 +16,18 @@ function startApp(name){
   console.log(`Welcome to ${name}'s application!`)
   console.log("--------------------")
 }
+/*
+function to list the tasks 
+*/
+let tasks =['task 1','task 2','task 3','task 4'];
+function listtasks(){
+console.log('tasks:');
+tasks.forEach((task, index) => {
+  console.log(`${index + 1}- ${task}`);
+});
+
+}
+
 
 
 /**
@@ -47,6 +59,9 @@ function onDataReceived(text) {
   }
   else if(trimmedText === 'help'){
     help();
+  }
+  else if(trimmedText === 'list'){
+    listtasks();
   }
   else{
     unknownCommand(text);
