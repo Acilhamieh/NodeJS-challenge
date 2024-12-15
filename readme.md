@@ -132,7 +132,7 @@ If you haven't yet, now would be a good moment to push
 *note*: commits. Each step is a commit.
 
 1. Make the "remove" command tell you if you enter a number that does not exist
-2. commit ("better remove")  
+2. commit ("better remove") 
 3. Make an "edit" command that works as such:
   - `edit` without anything should give an error
   - `edit new text` should change the *last* task to "new text"

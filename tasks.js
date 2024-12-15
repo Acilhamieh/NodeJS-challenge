@@ -68,9 +68,12 @@ function onDataReceived(text) {
     listtasks();
   }
   else if(splittext[0] === 'remove'){
+    if(parseInt(splittext[1])<=tasks.length){
     tasks.splice(parseInt(splittext[1])-1,1);
     console.log("ok");
-    listtasks();
+    listtasks()
+  }else{
+  console.log("the task does not exist");}
 
   }
   else{
