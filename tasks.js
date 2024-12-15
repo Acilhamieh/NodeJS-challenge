@@ -16,17 +16,7 @@ function startApp(name){
   console.log(`Welcome to ${name}'s application!`)
   console.log("--------------------")
 }
-/*
-function to list the tasks 
-*/
-let tasks =['task 1','task 2','task 3','task 4'];
-function listtasks(){
-console.log('tasks:');
-tasks.forEach((task, index) => {
-  console.log(`${index + 1}- ${task}`);
-});
 
-}
 
 
 
@@ -63,11 +53,20 @@ function onDataReceived(text) {
   else if(trimmedText === 'list'){
     listtasks();
   }
+  else if(trimmedText === 'add'){
+    console.log('error ! you should add something !');
+  }
+  else if(splittext[0] === 'add'){
+    let result = text.replace("add ", "");
+   tasks.push(result);
+   console.log('ok');
+   listtasks();
+  }
   else{
     unknownCommand(text);
   }
 }
-
+  
 
 
 /**
@@ -80,7 +79,6 @@ function onDataReceived(text) {
 function unknownCommand(c){
   console.log('unknown command: "'+c.trim()+'"')
 }
-
 
 /**
  * Says hello
@@ -101,6 +99,20 @@ function quit(){
   console.log('Quitting now, goodbye!')
   process.exit();
 }
+/*
+function to list the tasks 
+*/
+let tasks =['task 1','task 2','task 3','task 4'];
+function listtasks(){
+console.log('tasks:');
+tasks.forEach((task, index) => {
+  console.log(`${index + 1}- ${task}`);
+});
+
+}
+
+
+
   
 
 
@@ -113,6 +125,7 @@ function help(){
 console.log("available commandes:");
 console.log("-hello to display hello!");
 console.log("-hello + anything ;display hello anything ! ");
+console.log("-list to display tasks");
 console.log("-quit or exit to quit the application ");
 console.log("-help to display this message");
 
