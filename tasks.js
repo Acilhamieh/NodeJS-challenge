@@ -76,6 +76,27 @@ function onDataReceived(text) {
   console.log("the task does not exist");}
 
   }
+  else if(trimmedText === 'edit'){
+    console.log('error ! you should edit something !');
+  }
+  else if(splittext[0] === 'edit'){
+    
+    if (isNaN(parseInt(splittext[1]))){
+      console.log("ok1");
+      let result = text.replace("edit ", "");
+      tasks[tasks.length-1]=result;
+      listtasks();
+   }else{
+    if (splittext.length >= 3 &&  splittext[2].trim() !== "")  {
+      let slicedtext=splittext.slice(2);
+      tasks[parseInt(splittext[1])-1]=slicedtext;
+      listtasks();
+    }else{
+    console.log("you should add a task to edit ! ");}
+    
+   }
+  
+   }
   else{
     unknownCommand(text);
   }
