@@ -88,8 +88,11 @@ function onDataReceived(text) {
       listtasks();
    }else{
     if (splittext.length >= 3 &&  splittext[2].trim() !== "")  {
-      let slicedtext=splittext.slice(2);
-      tasks[parseInt(splittext[1])-1]=slicedtext;
+      console.log("ok2");
+      let result = text.replace(/edit|\d/g, "").trim();
+      tasks[parseInt(splittext[1])-1]=result;
+     /* let slicedtext=splittext.slice(2);
+      tasks[parseInt(splittext[1])-1]=slicedtext;*/
       listtasks();
     }else{
     console.log("you should add a task to edit ! ");}

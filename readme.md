@@ -145,13 +145,16 @@ If you haven't yet, now would be a good moment to push
 
 We are going to add a done/undone (checked/unchecked) feature to our task list.  
 
-Think of a single task. Until now, a task was, for example "get milk". It was just text. Now, we are going to want to add a "done" property, which can be `true` or `false`. How do we do that?
+Think of a single task. Until now, a task was, for example "get milk". 
+It was just text. Now, we are going to want to add a "done" property, which can be `true` or `false`. How do we do that?
 
 *note*: how about not forgetting to commit.
 
 1. Think about how you want to model your data so each task has a `done` property
 2. Change your model and test that everything you had before still works
-3. Enter a few tasks in your array and make sure to have some that are done. Make this "done" property show in the list (for example, by putting a `[ ]` before each task and `[✓]` before tasks that are `done`). You will probably have to change slightly or entirely most of the functions you created previously.
+3. Enter a few tasks in your array and make sure to have some that are done.
+ Make this "done" property show in the list (for example, by putting a `[ ]` before each task and `[✓]` before tasks that are `done`).
+ You will probably have to change slightly or entirely most of the functions you created previously.
 4. commit ("added done property to tasks")  
 5. Create a new command `check`, that works as such:
   - `check 1` should change task 1 to "done"
