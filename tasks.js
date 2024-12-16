@@ -57,13 +57,14 @@ function onDataReceived(text) {
     console.log('error ! you should add something !');
   }
   else if(splittext[0] === 'add'){
-    let result = text.replace("add ", "");
-   tasks.push(result);
-   console.log('ok');
-   listtasks();
+    let result = text.replace("add ", "").trim();
+    tasks.push({ description: result, done: false });
+    //tasks.push(result);
+    console.log('ok');
+    listtasks();
   }
   else if(trimmedText === 'remove'){
-    tasks.splice(0,1);
+    tasks.splice(tasks.length-1,1);
     console.log("ok");
     listtasks();
   }
@@ -141,11 +142,17 @@ function quit(){
 function to list the tasks 
 */
 let tasks =['task 1','task 2','task 3','task 4'];
+tasks = tasks.map(task => ({
+  description: task,
+  done: false // Default value
+}));
 function listtasks(){
 console.log('tasks:');
 tasks.forEach((task, index) => {
-  console.log(`${index + 1}- ${task}`);
+  console.log(`${index + 1}- ${task.description}`);
 });
+
+/*console.log(tasks);*/
 
 }
 
@@ -167,6 +174,8 @@ console.log("-list to display tasks");
 console.log("-add + a task to add");
 console.log("-remove to remove the first task ");
 console.log("-remove+ index for the task to remove ");
+console.log("-edit + something replace it by the last task");
+console.log ("-edit+index+something to put it into this index");
 console.log("-quit or exit to quit the application ");
 console.log("-help to display this message");
 
